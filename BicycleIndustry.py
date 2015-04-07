@@ -13,7 +13,17 @@ class Bicycle():
 
 
 class Shop():
-    pass
+    def name(self, shopName):
+        self.shopName = shopName
+
+    def inventory(self, bikeList):
+        pass
+
+    def sale(self):
+        pass
+
+    def profilt(self):
+        pass
 
 
 class Customer():
