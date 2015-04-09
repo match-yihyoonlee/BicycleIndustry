@@ -1,7 +1,7 @@
 __author__ = 'Yih-Yoon Lee'
 #
 
-class Bicycle(object):
+class Bicycle:
     def __init__(self, bikeDetail, bikeWeight):
         self.bikeDetail = {
             'Madone': [150, 100],
@@ -13,15 +13,15 @@ class Bicycle(object):
         }
 
 
-class Shop(object):
+class Shop:
     def name(self, shopName):
         self.shopName = shopName
 
     def inventory(self, bikeList):
         self.bikeList = bikeList
 
-    def sale(self, totalSale):
-        self.totalSale = totalSale
+    def sale(self, saleMargin):
+        self.saleMargin = saleMargin
 
     def profit(self, totalProfit):
         self.totalProfit = totalProfit
@@ -37,6 +37,7 @@ class Customer:
 FriscoBikeMart = Shop()
 FriscoBikeMart.shopName = 'Fisco Bike\'s Mart'
 FriscoBikeMart.inventory = {'Madone': 5, 'Lexa': 3, 'Silque': 5, 'FX': 2, 'CrossRip': 1, 'Tandem': 1}
+FriscoBikeMart.saleMargin = .2
 
 Lee = Customer('Yih-Yoon Lee', 200, 'Y')
 Chia = Customer('Chia-Hwa Chang', 500, 'Y')
