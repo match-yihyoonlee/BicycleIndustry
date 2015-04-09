@@ -2,11 +2,16 @@ __author__ = 'Yih-Yoon Lee'
 #
 
 class Bicycle(object):
-    def __init__(self, bikeDetail):
-        self.bikeDetail = {'Madone': 150, 'Lexa': 400, 'Silque': 1000, 'FX': 1500, 'CrossRip': 4500, 'Tandem': 8000}
-
-    def weight(self, bikeWeight):
-        self.bikeWeight = bikeWeight
+    def __init__(self, bikeDetail, bikeWeight):
+        self.bikeDetail = {
+            'Madone': [150, 100],
+            'Lexa': [400, 90],
+            'Silque': [1000, 80],
+            'FX': [1500, 75],
+            'CrossRip': [4500, 60],
+            'Tandem': [8000, 55]
+        }
+        self.bikeWeight = {'Madone'}
 
 
 class Shop(object):
@@ -17,7 +22,7 @@ class Shop(object):
         self.bikeList = bikeList
 
     def sale(self, totalSale):
-        self.totalsale = totalSale
+        self.totalSale = totalSale
 
     def profit(self, totalProfit):
         self.totalProfit = totalProfit
@@ -32,4 +37,5 @@ class Customer(object):
 
     def buyBike(self, buy):
         self.buy = buy
+
 
