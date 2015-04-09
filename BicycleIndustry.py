@@ -1,32 +1,29 @@
-__author__ = 'yih-yoonlee'
+__author__ = 'Yih-Yoon Lee'
+#
 
-
-class Bicycle():
-    def model(self, bikeName):
-        self.bikeName = bikeName
+class Bicycle(object):
+    def __init__(self, bikeDetail):
+        self.bikeDetail = {'Madone': 150, 'Lexa': 400, 'Silque': 1000, 'FX': 1500, 'CrossRip': 4500, 'Tandem': 8000}
 
     def weight(self, bikeWeight):
         self.bikeWeight = bikeWeight
 
-    def cost(self, bikeCost):
-        self.bikeCost = bikeCost
 
-
-class Shop():
+class Shop(object):
     def name(self, shopName):
         self.shopName = shopName
 
     def inventory(self, bikeList):
-        pass
+        self.bikeList = bikeList
 
-    def sale(self):
-        pass
+    def sale(self, totalSale):
+        self.totalsale = totalSale
 
-    def profilt(self):
-        pass
+    def profit(self, totalProfit):
+        self.totalProfit = totalProfit
 
 
-class Customer():
+class Customer(object):
     def name(self, customerName):
         self.customerName = customerName
 
