@@ -1,17 +1,18 @@
 
-from bicycles import Bicycle, Shop, Customer 
+from bicycles import Bicycle, Shop, Customer
+
 def main():
     # Create an instance of bike shop - Frisco's Bike Mart
-    affordableBikeList = {}
+    affordablebikelist = {}
     FriscoBikeMart = Shop('Fisco Bike\'s Mart',.2)
     FriscoBikeMart.inventory = {'Madone': 5, 'Lexa': 3, 'Silque': 5, 'FX': 2, 'CrossRip': 1, 'Tandem': 1}
 
     # Create 3 customers
-    Lee = Customer('Yih-Yoon Lee',200)
-    Chia = Customer('Chang Chia', 500)
-    Joseph = Customer('Joseph Tan',10000)
+    lee = Customer('Yih-Yoon Lee',200)
+    chia = Customer('Chang Chia', 500)
+    joseph = Customer('Joseph Tan',10000)
 
-    customers = [Lee, Chia, Joseph]
+    customers = [lee, chia, joseph]
 
     madone = Bicycle('Madone', 150, 150)
     lexa = Bicycle('Lexa',90,400)
@@ -27,6 +28,9 @@ def main():
 
     for customer in customers:
        customer.display_bikes(FriscoBikeMart,bicycles)
+
+    for customer in customers:
+        pass
 
 if __name__ == "__main__":
     main()
