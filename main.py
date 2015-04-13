@@ -1,9 +1,8 @@
-
 from bicycles import Bicycle, Shop, Customer
 
 def main():
     # Create an instance of bike shop - Frisco's Bike Mart
-    affordablebikelist = {}
+
     FriscoBikeMart = Shop('Fisco Bike\'s Mart',.2)
     FriscoBikeMart.inventory = {'Madone': 5, 'Lexa': 3, 'Silque': 5, 'FX': 2, 'CrossRip': 1, 'Tandem': 1}
 
@@ -30,7 +29,14 @@ def main():
        customer.display_bikes(FriscoBikeMart,bicycles)
 
     for customer in customers:
-        pass
+        customer.buy_bike(customer, bicycles, FriscoBikeMart)
+
+    print '\n{0}\'s Updated Inventory:'.format(FriscoBikeMart.shop_name)
+    print '*' * 40
+
+    FriscoBikeMart.display_inventory()
+
+    print '\n{0}\'s total profit: {1}'.format(FriscoBikeMart.shop_name, FriscoBikeMart.total_profit)
 
 if __name__ == "__main__":
     main()

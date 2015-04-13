@@ -1,3 +1,4 @@
+import random
 class Bicycle(object):
     def __init__(self,model_name,weight,cost_to_produce):
         self.model_name = model_name
@@ -11,7 +12,7 @@ class Bicycle(object):
 class Shop(object):
     def __init__(self,shop_name,sale_margin):
         self.shop_name = shop_name
-        self.inventory = []
+        self.inventory = {}
         self.total_profit = 0
         self.sale_margin = sale_margin
 
@@ -26,14 +27,26 @@ class Shop(object):
         print '\n'
 
 class Customer(object):
-    def __init__(self,customer_name,availMoney):
+    def __init__(self,customer_name,avail_money):
         self.customer_name = customer_name
-        self.availMoney = availMoney
-        self.bikeOwn = []
+        self.avail_money = avail_money
+        self.bike_own = []
 
     def display_bikes(self, shop, bicycles):
         print 'Bicycle models that {} can afford are: '.format(self.customer_name)
         for bicycle in bicycles:
-            if shop.retail_bike_price(bicycle) < self.availMoney:
+            if shop.retail_bike_price(bicycle) < self.avail_money:
                 print bicycle.model_name
         print '\n'
+
+    def buy_bike(self,customer_name,bicycles, shop):
+        affordablebikelist = []
+        for bicycle in bicycles:
+            if shop.retail_bike_price(bicycle) < self.avail_money:
+                affordablebikelist.append(bicycle)
+        final_bike = random.choice(affordablebikelist)
+        money_left = self.avail_money - shop.retail_bike_price(final_bike)
+        shop.total_profit += shop.retail_bike_price(final_bike)
+        shop.inventory[final_bike.model_name] -= 1
+
+        print '{0} bought {1} for {2}. Customer has {3} available fund.'.format(self.customer_name,final_bike.model_name,shop.retail_bike_price(final_bike),money_left)
